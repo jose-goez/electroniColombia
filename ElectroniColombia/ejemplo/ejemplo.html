@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tienda ElectroniColombia</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=Ae5BGr7PP2bGhIsKQ1aZGmSA15m1vd11trwq4uOnWGVq9WXYhRGl-mlBKQAE6IL698B-_osXghMhui45"></script>
+    <link rel="stylesheet" href="ejemplo.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="icon" href="../img/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html">Inicio</a>
+        <a href="../index.html"><img src="../img/logo.webp" alt="" width="200px"></a>
+        <button class="btnHeader"><img src="../img/carrito.webp" alt="Carrito"></button>
+        <button class="x"><img src="../img/x.webp" alt=""></button>
+    </header>
+    <div class="subHeader">
+        <h3>Más de 1.000 productos en Stock</h3>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h1>ElectroniColombia</h1>
+                <h2>Carrito de compras.</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group">tu</ul>
+                <hr>
+                <!-- Precio total -->
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <p class="text-right">Total a pagar: $<span id="total">0.000</span></p>
+
+                <div id="paypal-button-container"></div>
+            </aside>
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <div id="ver">
+                <button id="volverAtras">Volver Atrás</button>
+            </div>
+
+        </div>
+    </div>
+    <a class="flechaArriba" href="#"><img src="../img/flechaArriba.webp" alt=""></a>
+
+    <script src="ejemplo.js"></script>
+</body>
+
+</html>

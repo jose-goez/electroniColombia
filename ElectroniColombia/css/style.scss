@@ -1,0 +1,526 @@
+$azul: #1877f2;
+$grisClaro: rgb(97, 95, 95);
+$grisOscuro: rgb(50, 48, 48);
+$blanco: white;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+@media (max-width:768px) {
+    .header_escritorio_block {
+        display: none;
+    }
+
+    .header_movil {
+        @include flex;
+        background-color: $azul;
+        position: fixed;
+        width: 100%;
+        top: 0;
+
+        #btnAbrirMenu {
+            background-color: $azul;
+            border: none;
+            cursor: pointer;
+        }
+
+        #btnCerrarMenu {
+            @extend #btnAbrirMenu;
+            display: none;
+        }
+
+        #tienda {
+            @extend #btnAbrirMenu;
+
+        }
+    }
+
+    .nav {
+        @include flex;
+        flex-direction: column;
+        line-height: 40px;
+        background-color: $azul;
+        opacity: 0;
+
+        position: fixed;
+        width: 100%;
+        top: 40px;
+
+
+        a {
+            text-decoration: none;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            font-weight: bolder;
+            color: $blanco;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+@media (min-width:769px) {
+    .header_movil_block {
+        display: none;
+    }
+
+    .header_escritorio_block {
+        @include flex;
+        background-color: $azul;
+        position: fixed;
+        width: 100%;
+        top: 0%;
+
+        a {
+            color: $blanco;
+            text-decoration: none;
+            margin: 9px;
+            text-transform: capitalize;
+            font-weight: bolder;
+            transition: 0.5s;
+        }
+
+        a:hover {
+            // color: $grisClaro;
+            color: rgb(210, 200, 188);
+            text-decoration: underline;
+
+        }
+
+        .tienda {
+            background-color: $azul;
+            border: none;
+        }
+
+        // .logo{
+        //     min-width: 100px;
+        // }
+    }
+}
+
+// ================================================================
+// =====================slider=====================================
+.slider {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 54px;
+
+    ul {
+        display: flex;
+        padding: 0;
+        width: 500%;
+        // alternate-reverse 
+        animation: cambio 15s infinite step-start;
+
+        li {
+            width: 100%;
+            list-style: none;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                max-height: 400px;
+                object-fit: fill;
+            }
+
+
+        }
+    }
+
+    @keyframes cambio {
+        10% {
+            margin-left: 0;
+        }
+
+        20% {
+            margin-left: 0;
+        }
+
+        30% {
+            margin-left: -100%;
+        }
+
+        40% {
+            margin-left: -100%;
+        }
+
+        50% {
+            margin-left: -200%;
+        }
+
+        60% {
+            margin-left: -200%;
+        }
+
+        70% {
+            margin-left: -300%;
+        }
+
+        80% {
+            margin-left: -300%;
+        }
+
+        90% {
+            margin-left: -400%;
+        }
+
+        100% {
+            margin-left: -400%;
+        }
+
+    }
+}
+
+// ========================quienes somos======================
+.quienesSomos {
+    text-align: center;
+    padding-bottom: 20px;
+    scroll-margin-top: 80px;
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+        color: $azul;
+    }
+
+    .cajas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .caja {
+            p {
+                max-width: 300px;
+                color: $grisClaro;
+                font-size: 20px;
+                line-height: 40px;
+            }
+        }
+    }
+
+
+    a {
+        background-color: $azul;
+        color: $blanco;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 900;
+    }
+
+    a:hover {
+        background-color: #3d8cf4;
+    }
+}
+
+// =======================servicios==================
+.servicios {
+    text-align: center;
+    background-color: $azul;
+    color: $blanco;
+    padding: 30px;
+    scroll-margin-top: 40px;
+
+    .cajasServicios {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .caja_servicios {
+            margin: 9px;
+
+            p {
+                max-width: 300px;
+            }
+        }
+    }
+}
+
+// =========================detalles=====================
+.detalles {
+    text-align: center;
+    scroll-margin-top: 70px;
+
+    h2 {
+        color: $grisOscuro;
+        font-size: 50px;
+    }
+
+    h4 {
+        color: $azul;
+        font-size: 30px;
+    }
+
+    .cajas_detalles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .caja_detalles {
+            margin: 30px;
+
+            h3 {
+                color: $grisOscuro;
+                font-size: 25px;
+            }
+
+            p {
+                max-width: 300px;
+                color: $grisClaro;
+            }
+        }
+    }
+}
+
+// ===========================formulario======================
+.formularioPadre {
+    text-align: center;
+    padding: 50px;
+    background-color: #1877f2;
+    color: $blanco;
+    scroll-margin-top: -200px;
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    hr {
+        max-width: 50%;
+    }
+
+    .formulario {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 50px;
+
+        form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            input {
+                width: 300px;
+                padding: 10px;
+                margin-bottom: 5px;
+                border: none;
+                border-radius: 10px;
+            }
+            input:focus{
+                outline-color:$azul;
+            }
+
+            textarea {
+                width: 300px;
+                padding: 10px;
+                margin-bottom: 5px;
+                border: none;
+                border-radius: 10px;
+                resize: none;
+            }
+            textarea:focus{
+                outline-color: $azul;
+            }
+        }
+
+        img {
+            max-width: 400px;
+        }
+
+        button {
+            border-radius: 10px;
+            border: none;
+            padding: 2px 20px;
+            cursor: pointer;
+            color: $grisClaro;
+        }
+        button:hover{
+            box-shadow: 0 0 8px black;
+        }
+    }
+}
+
+// ================================parallax============================
+.parallax {
+    background-image: url("../img/tiendaRopa.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    // height: 400px;
+    // padding: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 {
+        color: $blanco;
+        font-size: 50px;
+        background-color: rgba(0, 0, 0, 0.408);
+    }
+
+    h5 {
+        font-size: 40px;
+        color: $blanco;
+        background-color: rgba(0, 0, 0, 0.408);
+
+    }
+    a{
+        background-color: rgba(0, 0, 0, 0.408);
+    }
+}
+
+// ==================================boton redes sociales fixed==================
+.btnRedesSociales {
+    position: fixed;
+    bottom: 100px;
+
+    button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    #cerrar {
+        display: none;
+    }
+
+    #menuRedes {
+        display: none;
+    }
+
+    .a {
+        position: absolute;
+        transition: 0.5s;
+        animation: mover 3s;
+    }
+
+    #menuRedes a:hover {
+        transform: scale(1.5);
+        box-shadow: 0 0 7px black;
+        border-radius: 50%;
+    }
+
+    @keyframes mover {
+        0% {
+            /* transform: skew(60deg); */
+            transform: rotateX(90deg);
+        }
+    }
+
+    a:nth-child(1) {
+        top: 0%;
+        left: 60px;
+    }
+
+    a:nth-child(2) {
+        top: 40px;
+        left: 100px;
+    }
+
+    a:nth-child(3) {
+        top: 60px;
+        left: 60px;
+    }
+
+    a:nth-child(4) {
+        top: 100px;
+        left: 100px;
+    }
+
+    a:nth-child(5) {
+        top: 100px;
+        left: 20px;
+    }
+
+    a:nth-child(6) {
+        top: 50px;
+        left: 7px;
+    }
+}
+
+// ====================btn WhatsApp=================
+.btn_whatsapp {
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+}
+
+// =================================footer=======================
+
+footer {
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: $azul;
+    color: $blanco;
+    padding: 10px;
+
+    .caja_footer {
+        margin: 30px;
+        padding: 10px;
+        // border: 1px solid white;
+
+
+        a {
+            text-decoration: none;
+            color: rgb(210, 200, 188);
+
+        }
+
+        a:hover {
+            color: $blanco;
+            text-decoration: underline;
+            animation: correr 2s infinite;
+        }
+
+        @keyframes correr {
+            0% {
+                transform: translateX(10px);
+
+            }
+        }
+
+    }
+
+    .redes {
+        background-color: $blanco;
+        color: $azul;
+        border-radius: 20px;
+        box-shadow: 0 0 10px black;
+    }
+
+}
+
+@media (max-width:768px) {
+    .slider {
+        margin-top: 24px;
+    }
+}

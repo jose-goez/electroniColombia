@@ -1,0 +1,50 @@
+body{
+    font-family: sans-serif;
+    background-color: rgb(223, 238, 243);
+}
+h1{
+    color:#1877f2;
+}
+header{
+    background-color: #1877f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+header a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color:azure;
+    font-family: sans-serif;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+header a:hover{
+    color: rgb(210, 200, 188);
+    text-decoration: underline;
+}
+
+.soporte{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #615f5f;
+    padding: 20px;
+}
+.image{
+    max-width: 100%;
+}
+
+.parrafo{
+    color: #1877f2;
+}
+
+li{
+    color: #908a8a;
+    font-weight: 900;
+}
